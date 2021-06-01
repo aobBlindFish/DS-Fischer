@@ -23,7 +23,6 @@ class Response:
 
 
 # Responses
-
 greeting_1 = Response(["Hallo", "Hi"],
                       [["Hallo 1a", "Hallo 1b"], ["Hallo 2"], ["Hallo 3", "Hallo 3ab", "Hallo 3f"], ["Hallo 4"],
                        ["Hallo 5"], ["Hallo 6"], ["Hallo 7"], ["Hallo 8"],

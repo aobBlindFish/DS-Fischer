@@ -21,21 +21,27 @@ async def on_message(message):
         return
 
     if message.content.startswith("!f "):
+        # get Username
+        username = user.name + "#" + user.discriminator
+
         # get User ID
-        '''
         user_id = None
         for id in db:
-            if db[id] == user.name:
-                print("\nye\n")
+            if db[str(id)] == username:
                 user_id = id
         if user_id == None:
             await message.channel.send("Who are you?")
             return
-        '''
+
         # Send answer
         text = StringPreset.str_trim(message.content, 3)
-        answer = io_manager.answer(text)
+        answer = io_manager.answer(text, user_id)
         await message.channel.send(answer)
+
+    if message.content.startswith("!n "):
+        print("1. ")
+        await client.user.edit(username="Birne")
+        print("2. ")
 
 
 keep_alive()

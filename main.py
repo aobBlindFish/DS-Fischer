@@ -38,7 +38,7 @@ async def on_message(message):
         answer = io_manager.answer(text, user_id)
         await message.channel.send(answer)
 
-    if message.content.startswith("!n "):
+    elif message.content.startswith("!n "):
         print("1. ")
         await client.user.edit(username="Birne")
         print("2. ")

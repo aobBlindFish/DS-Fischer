@@ -2,30 +2,7 @@ import random
 import sys
 
 
-# Class Definition
-class Response:
-    def __init__(self, prompt_list, answer_list):
-        # prompt_list -> str []
-        # answer_list -> str []
-        self.prompt_list = prompt_list
-        self.answer_list = answer_list
-
-    def answer(self, user_id):
-        rand_int = random.randint(0, len(self.answer_list) - 1)
-        rnd_response = self.answer_list[rand_int]
-        return rnd_response
-
-
-    def relate(self, text):
-        output = False
-        for prompt in self.prompt_list:
-            if prompt.lower() == text.lower():
-                output = True
-
-        return output
-
-
-# Function Definition
+# Helper Function Definition
 def rng(number):
     # number: int, float in range(0, 100)
     if type(number) not in [int, float]:
@@ -187,9 +164,6 @@ def filler(text, filler_words, intensity=50):
     return output
 
 
-# Responses
-opener_1 = Response(["Wie geht es dir?", "Wie geht's so?", "Wie gehts?"],
-                    ["Gut, danke.", "Mir geht es gut.", "Passt so."])
-
-# List of responses
-response_list = [opener_1]
+# Function Definition
+def transform(text, user_id):
+    return text + " von " + str(user_id)

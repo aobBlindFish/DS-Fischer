@@ -1,5 +1,6 @@
 import random
 import TextContent.transform as rt
+import TextContent.vocab as vc
 
 
 # Function Definition
@@ -21,19 +22,35 @@ class Response:
 
     def answer(self, user_id):
         special_res_chance = 50
-        vocab_chance = 70
-        if rt.rng(special_res_chance):
-            # Special Response
+        vocab_chance = 100
+        if rt.rng(special_res_chance):  # Special Response
+            # Select set of answer according to the user
             answer = self.answer_list[user_id]
+            # Look for special answers
             if answer == None:
+                # Choose random standart answer
                 answer = random.choice(self.standart_res)
+                # Use vocabulary
+                for vocabular in vc.vocab_list:
+                    vc.transform_vocab(answer,
+                                       vocabular,
+                                       user_id,
+                                       intensity=vocab_chance)
+                # Transform according to the user
                 answer = rt.transform(answer, user_id)
             else:
+                # Choose random special answer
                 answer = random.choice(answer)
-        else:
-            # Altered Standart Response
+        else:  # Altered Standart Response
+            # Choose random standart answer
             answer = random.choice(self.standart_res)
-            # Insert Vocab here
+            # Use vocabulary
+            for vocabular in vc.vocab_list:
+                answer = vc.transform_vocab(answer,
+                                            vocabular,
+                                            user_id,
+                                            intensity=vocab_chance)
+            # Transform according to the user
             answer = rt.transform(answer, user_id)
 
         return answer

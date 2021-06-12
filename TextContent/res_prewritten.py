@@ -22,7 +22,7 @@ class Response:
 
     def answer(self, user_id):
         special_res_chance = 50
-        vocab_chance = 100
+        vocab_chance = 70
         if rt.rng(special_res_chance):  # Special Response
             # Select set of answer according to the user
             answer = self.answer_list[user_id]

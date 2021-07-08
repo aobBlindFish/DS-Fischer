@@ -32,13 +32,17 @@ async def on_message(message):
         text = StrP.str_trim(str(msg_split[1]), 1)
 
         # translate and send
-        translation_1 = io_manager.transition(text, user_id, 25)
-        translation_2 = io_manager.transition(text, user_id, 75)
-        response_1 = IDs[int(user_id)] + " 25%:\n" + translation_1
-        response_2 = IDs[int(user_id)] + " 75%:\n" + translation_2
+        translation_1 = io_manager.transition(text, user_id, 10)
+        translation_2 = io_manager.transition(text, user_id, 50)
+        translation_3 = io_manager.transition(text, user_id, 90)
+        response_1 = IDs[int(user_id)] + " 10%:\n" + translation_1
+        response_2 = IDs[int(user_id)] + " 50%:\n" + translation_2
+        response_3 = IDs[int(user_id)] + " 90%:\n" + translation_3
         await message.channel.send(response_1)
-        time.sleep(10)
+        time.sleep(5)
         await message.channel.send(response_2)
+        time.sleep(5)
+        await message.channel.send(response_3)
     
     elif message.content.startswith("!u "):
         # get content

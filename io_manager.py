@@ -1,13 +1,22 @@
-import TextContent.res_prewritten as res
+import TextManagement.transform as trend
+import TextManagement.vocab as vocab
 
 
-# what msg relates to what prompt
-def answer(text, user_id):
-    output = res.disorientation_2.answer(int(user_id))
+# Transition Function
+def transition(text, user_id, intensity=100):
+    try:
+        if int(user_id) < 0 or int(user_id) > 10:
+            return text
 
-    # Check for prewritten answers
-    for prompt in res.response_list:
-        if prompt.relate(text):
-            output = prompt.answer(int(user_id))
+        if int(intensity) < 0 or int(intensity) > 100:
+            return text
+    except ValueError:
+        return text
 
-    return output
+    intensity = int(intensity)
+    user_id = int(user_id)
+    text = str(text)
+    for i in vocab.vocab_list:
+        text = vocab.transform_vocab(text, i, user_id, intensity)
+    text = trend.transform(text, user_id)
+    return text

@@ -1,5 +1,5 @@
 import random
-import TextContent.transform as rt
+import TextManagement.transform as rt
 
 
 # Class Definition

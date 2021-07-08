@@ -2,8 +2,7 @@ import discord
 import os
 from stay_awake import keep_alive
 import io_manager
-import StringPreset
-from replit import db
+import TextManagement.StringPreset as StrP
 
 client = discord.Client()
 
@@ -21,27 +20,21 @@ async def on_message(message):
         return
 
     if message.content.startswith("!f "):
-        # get Username
-        username = user.name + "#" + user.discriminator
+        # get content
+        msg_split = message.content.split("|||")
 
-        # get User ID
-        user_id = None
-        for id in db:
-            if db[str(id)] == username:
-                user_id = id
-        if user_id == None:
-            await message.channel.send("Who are you?")
-            return
+        # get user id
+        user_id = StrP.str_trim(msg_split[0].split(", ")[0], 3)
 
-        # Send answer
-        text = StringPreset.str_trim(message.content, 3)
-        answer = io_manager.answer(text, user_id)
-        await message.channel.send(answer)
+        # get intensity
+        intensity = msg_split[0].split(", ")[1]
 
-    elif message.content.startswith("!n "):
-        print("1. ")
-        await client.user.edit(username="Birne")
-        print("2. ")
+        # get text
+        text = StrP.str_trim(str(msg_split[1]), 1)
+
+        # translate and send
+        translation = io_manager.transition(text, user_id, intensity)
+        await message.channel.send(translation)
 
 
 keep_alive()

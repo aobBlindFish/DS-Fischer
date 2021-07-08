@@ -1,5 +1,6 @@
 import random
 import sys
+import TextManagement.StringPreset as StrP
 
 
 # Helper Function Definition
@@ -29,7 +30,7 @@ def decapital(text, intensity=50):
     elif len(text) == 0:
         sys.exit("Error in decapital(): Text needs to have content.")
 
-    # intensity: int in range(0, 100)
+    # intensity: int/float in range(0, 100)
     # basic case
     if intensity == 0:
         return text
@@ -53,7 +54,7 @@ def capital(text, intensity=50):
     elif len(text) == 0:
         sys.exit("Error in capital(): Text needs to have content.")
 
-    # intensity: int in range(0, 100)
+    # intensity: int/float in range(0, 100)
     # basic case
     if intensity == 0:
         return text
@@ -127,8 +128,55 @@ def repetition(text, symbols, factor=1):
     return output
 
 
-def filler(text, filler_words, intensity=50):
-    # fills in a random assortment of words after random words
+def typo(text, intensity):
+    if intensity == 0:
+        return text
+
+    sentence_chars = [
+        ".",
+        "!",
+        "?",
+        ",",
+        ";",
+        ":",
+        "-",
+        "_",
+        "'",
+        '"',
+        "*",
+        "~",
+        "+",
+        "#",
+    ]
+    try:
+        text = str(text)
+        intensity = float(intensity)
+    except ValueError or UnicodeDecodeError:
+        return text
+
+    words = text.split(" ")
+    output = ""
+    for word in words:
+        if rng(intensity):
+            new_word = ""
+            for letter in word:
+                if rng(intensity * 0.3) and letter not in sentence_chars:
+                    # capitalize
+                    if rng(50):
+                        letter = letter.upper()
+                    else:
+                        letter = letter.lower()
+                if rng(90) or letter in sentence_chars:  # omission
+                    new_word = new_word + letter
+            output = output + new_word + " "
+        else:
+            output = output + word + " "
+
+    return StrP.str_trim(output, -1)
+
+
+def filler(text, filler_words, intensity=50, word_mode=True):
+    # fills in a random assortment of words after random words or sentences
 
     # text: str
     if type(text) != str:
@@ -148,22 +196,108 @@ def filler(text, filler_words, intensity=50):
         except UnicodeDecodeError:
             sys.exit("Error in filler(): Filler words need to be writable.")
 
-    # intensity: int in range(0, 100)
+    # intensity: int/float in range(0, 100)
     # basic case
     if filler_words == [] or intensity == 0:
         return text
 
     # normal case
-    str_split = text.split(" ")
+    if not word_mode:
+        text = " " + text
+
+    if word_mode:
+        splitter = " "
+    else:
+        splitter = "."
+
+    str_split = text.split(splitter)
+
     output = ""
-    for word in str_split:
+
+    for i in str_split:
         for filler_word in filler_words:
             if rng(intensity):
-                word = word + " " + filler_word
-        output = output + word + " "
+                if word_mode:
+                    i = i + " " + filler_word
+                else:
+                    i = " " + filler_word + i
+        output = output + i + splitter
+
+    if output[:1] == " ":
+        output = StrP.str_trim(output, 1)
+
     return output
 
 
 # Function Definition
 def transform(text, user_id):
-    return text + " von " + str(user_id)
+    if user_id == 0:
+        text = capital(text, 5)
+        text = typo(text, 5)
+        text = filler(text, ["\n"], 85, False)
+        text = repetition(text, ["."], 0.1)
+
+    elif user_id == 1:
+        text = decapital(text, 20)
+        text = repetition(text, ["."], 0.3)
+        text = typo(text, 5)
+
+    elif user_id == 2:
+        text = decapital(text, 30)
+        text = repetition(text, ["?"], 0.3)
+        text = typo(text, 10)
+        text = filler(text, ["\n"], 10, False)
+        text = repetition(text, ["."], 0.1)
+        text = filler(text, ["halt", "so"], 5, True)
+        text = filler(text, ["Also"], 5, False)
+
+    elif user_id == 3:
+        text = decapital(text, 20)
+        text = repetition(text, [","], 0.8)
+        text = repetition(text, ["."], 0.3)
+        text = typo(text, 5)
+        text = filler(text, ["Ja"], 30, False)
+
+    elif user_id == 4:
+        text = decapital(text, 5)
+        text = filler(text, ["\n"], 10, False)
+        text = repetition(text, ["."], 0.3)
+        text = filler(text, ["halt", "so"], 5, True)
+
+    elif user_id == 5:
+        text = typo(text, 5)
+        text = filler(text, ["\n"], 75, False)
+        text = repetition(text, ["."], 0.3)
+
+    elif user_id == 6:
+        text = decapital(text, 30)
+        text = repetition(text, ["."], 0.3)
+        text = typo(text, 5)
+
+    elif user_id == 7:
+        text = decapital(text, 20)
+        text = repetition(text, [","], 0.6)
+        text = repetition(text, ["."], 0.3)
+        text = repetition(text, ["?"], 1.3)
+        text = typo(text, 5)
+        text = filler(text, ["so"], 5, True)
+
+    elif user_id == 8:
+        text = decapital(text, 5)
+        text = repetition(text, [","], 0.6)
+        text = repetition(text, ["."], 0.3)
+        text = typo(text, 5)
+
+    elif user_id == 9:
+        text = decapital(text, 80)
+        text = capital(text, 5)
+        text = repetition(text, ["."], 0.3)
+        text = typo(text, 20)
+        text = filler(text, ["halt"], 5, True)
+
+    elif user_id == 10:
+        text = capital(text, 5)
+        text = repetition(text, ["."], 0.3)
+        text = repetition(text, [","], 0.8)
+
+    return text

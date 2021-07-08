@@ -12,7 +12,7 @@ class Vocab:
 
 
 # Function Definition
-def transform_vocab(text, vocab, user_id, intensity=70):
+def transform_vocab(text, vocab, user_id, intensity=50):
     if vocab.replacements[int(user_id)] != None:
         for single_vocab in vocab.targets:
             str_split = text.split(single_vocab)

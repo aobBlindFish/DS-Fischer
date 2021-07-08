@@ -35,6 +35,11 @@ def decapital(text, intensity=50):
     if intensity == 0:
         return text
 
+    if intensity < 0:
+        intensity = 0
+    elif intensity > 100:
+        intensity = 100
+
     # normal case
     str_split = text.split(" ")
     output = ""
@@ -58,6 +63,11 @@ def capital(text, intensity=50):
     # basic case
     if intensity == 0:
         return text
+
+    if intensity < 0:
+        intensity = 0
+    elif intensity > 100:
+        intensity = 100
 
     # normal case
     str_split = text.split(" ")
@@ -154,6 +164,12 @@ def typo(text, intensity):
     except ValueError or UnicodeDecodeError:
         return text
 
+    # intensity in range(0, 100)
+    if intensity < 0:
+        intensity = 0
+    elif intensity > 100:
+        intensity = 100
+
     words = text.split(" ")
     output = ""
     for word in words:
@@ -197,6 +213,13 @@ def filler(text, filler_words, intensity=50, word_mode=True):
             sys.exit("Error in filler(): Filler words need to be writable.")
 
     # intensity: int/float in range(0, 100)
+    if type(intensity) not in [int, float]:
+        sys.exit("Error in filler(): Intensity needs to be a number.")
+    if intensity < 0:
+        intensity = 0
+    elif intensity > 100:
+        intensity = 100
+
     # basic case
     if filler_words == [] or intensity == 0:
         return text
@@ -230,70 +253,72 @@ def filler(text, filler_words, intensity=50, word_mode=True):
 
 
 # Function Definition
-def transform(text, user_id):
+def transform(text, user_id, intensity=50):
+    intensity = intensity * 0.02
+
     if user_id == 0:
-        text = capital(text, 5)
-        text = repetition(text, ["."], 0.1)
-        text = typo(text, 5)
+        text = capital(text, 5 * intensity)
+        text = repetition(text, ["."], 0.1 * intensity)
+        text = typo(text, 5 * intensity)
 
     elif user_id == 1:
-        text = decapital(text, 20)
-        text = repetition(text, ["."], 0.3)
-        text = typo(text, 5)
+        text = decapital(text, 20 * intensity)
+        text = repetition(text, ["."], 0.3 * intensity)
+        text = typo(text, 5 * intensity)
 
     elif user_id == 2:
-        text = decapital(text, 30)
-        text = repetition(text, ["?"], 0.3)
-        text = repetition(text, ["."], 0.1)
-        text = typo(text, 10)
-        text = filler(text, ["halt", "so"], 5, True)
-        text = filler(text, ["Also"], 5, False)
+        text = decapital(text, 30 * intensity)
+        text = repetition(text, ["?"], 0.3 * intensity)
+        text = repetition(text, ["."], 0.1 * intensity)
+        text = typo(text, 10 * intensity)
+        text = filler(text, ["halt", "so"], 5 * intensity, True)
+        text = filler(text, ["Also"], 5 * intensity, False)
 
     elif user_id == 3:
-        text = decapital(text, 20)
-        text = repetition(text, [","], 0.8)
-        text = repetition(text, ["."], 0.3)
-        text = typo(text, 5)
-        text = filler(text, ["Ja"], 20, False)
+        text = decapital(text, 20 * intensity)
+        text = repetition(text, [","], 0.8 * intensity)
+        text = repetition(text, ["."], 0.3 * intensity)
+        text = typo(text, 5 * intensity)
+        text = filler(text, ["Ja"], 20 * intensity, False)
 
     elif user_id == 4:
-        text = decapital(text, 5)
-        text = repetition(text, ["."], 0.3)
-        text = filler(text, ["halt", "so"], 5, True)
+        text = decapital(text, 5 * intensity)
+        text = repetition(text, ["."], 0.3 * intensity)
+        text = filler(text, ["halt", "so"], 5 * intensity, True)
 
     elif user_id == 5:
-        text = repetition(text, ["."], 0.3)
-        text = typo(text, 5)
+        text = repetition(text, ["."], 0.3 * intensity)
+        text = typo(text, 5 * intensity)
 
     elif user_id == 6:
-        text = decapital(text, 30)
-        text = repetition(text, ["."], 0.3)
-        text = typo(text, 5)
+        text = decapital(text, 30 * intensity)
+        text = repetition(text, ["."], 0.3 * intensity)
+        text = typo(text, 5 * intensity)
 
     elif user_id == 7:
-        text = decapital(text, 20)
-        text = repetition(text, [","], 0.6)
-        text = repetition(text, ["."], 0.3)
-        text = repetition(text, ["?"], 1.3)
-        text = typo(text, 5)
-        text = filler(text, ["so"], 5, True)
+        text = decapital(text, 20 * intensity)
+        text = repetition(text, [","], 0.6 * intensity)
+        text = repetition(text, ["."], 0.3 * intensity)
+        text = repetition(text, ["?"], 1.3 * intensity)
+        text = typo(text, 5 * intensity)
+        text = filler(text, ["so"], 5 * intensity, True)
 
     elif user_id == 8:
-        text = decapital(text, 5)
-        text = repetition(text, [","], 0.6)
-        text = repetition(text, ["."], 0.3)
-        text = typo(text, 5)
+        text = decapital(text, 5 * intensity)
+        text = repetition(text, [","], 0.6 * intensity)
+        text = repetition(text, ["."], 0.3 * intensity)
+        text = typo(text, 5 * intensity)
 
     elif user_id == 9:
-        text = decapital(text, 80)
-        text = capital(text, 5)
-        text = repetition(text, ["."], 0.3)
-        text = typo(text, 20)
-        text = filler(text, ["halt"], 5, True)
+        text = decapital(text, 80 * intensity)
+        text = capital(text, 5 * intensity)
+        text = repetition(text, ["."], 0.3 * intensity)
+        text = typo(text, 20 * intensity)
+        text = filler(text, ["halt"], 3 * intensity, True)
 
     elif user_id == 10:
-        text = capital(text, 5)
-        text = repetition(text, ["."], 0.3)
-        text = repetition(text, [","], 0.8)
+        text = capital(text, 5 * intensity)
+        text = repetition(text, ["."], 0.3 * intensity)
+        text = repetition(text, [","], 0.8 * intensity)
 
     return text

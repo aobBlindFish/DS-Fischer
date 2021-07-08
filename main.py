@@ -7,7 +7,11 @@ import TextManagement.StringPreset as StrP
 
 client = discord.Client()
 
-IDs = ["Blind Fish", "Trainerd", "Dilara", "elli", "Ian", "jamila", "jila", "lara", "Lisa", "Logikerus", "Emilia"]
+IDs = [
+    "Blind Fish", "Trainerd", "Dilara", "Elli", "Ian", "Jamila", "Jila",
+    "Lara", "Lisa", "Logikerus", "Emilia"
+]
+
 
 # Run Bot
 @client.event
@@ -43,7 +47,7 @@ async def on_message(message):
         await message.channel.send(response_2)
         time.sleep(5)
         await message.channel.send(response_3)
-    
+
     elif message.content.startswith("!u "):
         # get content
         msg_split = message.content.split("||")
@@ -56,11 +60,57 @@ async def on_message(message):
 
         # translate and send
         for user_id in range(11):
-          translation = io_manager.transition(text, user_id, intensity)
-          response = IDs[int(user_id)] + " " + str(intensity) + "%:\n" + translation
-          await message.channel.send(response)
-          time.sleep(5)
+            translation = io_manager.transition(text, user_id, intensity)
+            response = IDs[int(user_id)] + " " + str(
+                intensity) + "%:\n" + translation
+            await message.channel.send(response)
+            time.sleep(5)
 
+    elif message.content.startswith("!s "):
+        # get content
+        msg_split = message.content.split("||")
+
+        # get user id
+        user_id = StrP.str_trim(msg_split[0].split(";")[0], 3)
+
+        # get intensity
+        intensity = StrP.str_trim(msg_split[0].split(";")[1], 1)
+
+        # get text
+        text = StrP.str_trim(str(msg_split[1]), 1)
+
+        # translate and send
+        translation = io_manager.transition(text, user_id, intensity)
+        response = IDs[int(user_id)] + " " + str(
+            intensity) + "%:\n" + translation
+        await message.channel.send(response)
+
+    elif message.content.startswith("!c "):
+        # get intensity
+        intensity = StrP.str_trim(message.content, 3)
+
+        # Generate Conversation
+        msgs = io_manager.conversation(intensity)
+        title = msgs[0]
+        lines = msgs[2]
+        names = ""
+        for id in msgs[1]:
+            names = names + IDs[id] + ", "
+
+        names = StrP.str_trim(names, -2)
+
+        # Send Intro
+        introduction = "Gespräch: " + title + "\nPersonen: " + names
+        await message.channel.send(introduction)
+
+        # Send Conversation
+        for line in lines:
+            time.sleep(5)
+            await message.channel.send(line)
+        
+        # Stop Conversation
+        time.sleep(3)
+        await message.channel.send("Ende")
 
 
 keep_alive()

@@ -166,7 +166,7 @@ def typo(text, intensity):
                         letter = letter.upper()
                     else:
                         letter = letter.lower()
-                if rng(90) or letter in sentence_chars:  # omission
+                if rng(95) or letter in sentence_chars:  # omission
                     new_word = new_word + letter
             output = output + new_word + " "
         else:
@@ -233,9 +233,8 @@ def filler(text, filler_words, intensity=50, word_mode=True):
 def transform(text, user_id):
     if user_id == 0:
         text = capital(text, 5)
-        text = typo(text, 5)
-        text = filler(text, ["\n"], 85, False)
         text = repetition(text, ["."], 0.1)
+        text = typo(text, 5)
 
     elif user_id == 1:
         text = decapital(text, 20)
@@ -245,9 +244,8 @@ def transform(text, user_id):
     elif user_id == 2:
         text = decapital(text, 30)
         text = repetition(text, ["?"], 0.3)
-        text = typo(text, 10)
-        text = filler(text, ["\n"], 10, False)
         text = repetition(text, ["."], 0.1)
+        text = typo(text, 10)
         text = filler(text, ["halt", "so"], 5, True)
         text = filler(text, ["Also"], 5, False)
 
@@ -256,18 +254,16 @@ def transform(text, user_id):
         text = repetition(text, [","], 0.8)
         text = repetition(text, ["."], 0.3)
         text = typo(text, 5)
-        text = filler(text, ["Ja"], 30, False)
+        text = filler(text, ["Ja"], 20, False)
 
     elif user_id == 4:
         text = decapital(text, 5)
-        text = filler(text, ["\n"], 10, False)
         text = repetition(text, ["."], 0.3)
         text = filler(text, ["halt", "so"], 5, True)
 
     elif user_id == 5:
-        text = typo(text, 5)
-        text = filler(text, ["\n"], 75, False)
         text = repetition(text, ["."], 0.3)
+        text = typo(text, 5)
 
     elif user_id == 6:
         text = decapital(text, 30)

@@ -140,5 +140,95 @@ sg_02 = Convo("Das Wetter", [
     ], ["Abgemacht! Jetzt aber los.", 1]
 ])
 
+sg_03 = Convo("Im Supermarkt", [
+    ["Entschuldigung, wo sind denn hier die Tomaten?", 1],
+    ["Da vorne, in der Gemüseabteilung.", 2],
+    ["Da habe ich schon nachgeschaut, aber ich habe sie nicht gesehen.", 1],
+    ["Doch, sie sind vorne links, gleich am Eingang.", 2],
+    [
+        "Danke, ich gehe nochmal nachsehen. Ist denn momentan irgendwas im Angebot?",
+        1
+    ], ["Wir haben frischen Spargel, da kostet das Kilo nur 5 Euro.", 2],
+    [
+        "Oh, das klingt gut. Ist der Spargel denn aus Deutschland oder wurde er importiert?",
+        1
+    ], ["Das ist deutscher Spargel. Bayerischer, um genau zu sein.", 2],
+    ["Schön, da nehme ich ein Kilo mit. Oder besser gleich zwei.", 1],
+    ["Sie haben wohl Hunger?", 2],
+    [
+        "Und wie! Ich weiß, man sollte nicht hungrig einkaufen gehen, sonst kauft man noch mehr ein als man braucht.",
+        1
+    ], ["Tja, mich würde es freuen. Kann ich Ihnen noch etwas anbieten?", 2],
+    ["Zum Spargel bräuchte ich noch Kartoffeln.", 1],
+    [
+        "Die sind dort drüben, neben den Zwiebeln. Wir haben ganz junge, zarte Kartoffeln, die muss man nicht schälen.",
+        2
+    ],
+    [
+        "Gut, dann ist der Abend also gerettet. Spargel mit Kartoffeln. Schinken hole ich noch hinten an der Fleischtheke. Und ein bisschen Butter als Sauce habe ich noch daheim.",
+        1
+    ], ["Wie sieht es mit einer Nachspeise dazu aus?", 2],
+    ["Nachspeise? Was passt denn zu Spargel?", 1],
+    [
+        "Natürlich der Klassiker: Erdbeeren. Frische Erdbeeren. Mit etwas Vanilleeis vielleicht.",
+        2
+    ],
+    [
+        "Oh ja! Gute Idee. Und dann bräuchte ich noch etwas Weißwein zum Spargel. Ich habe sonst nur Leitungswasser daheim.",
+        1
+    ], ["Stimmt, habe ich vergessen zu fragen. Sonst noch einen Wunsch?", 2
+        ], ["Naja, ich weiß nicht wie ich das jetzt sagen soll.", 1],
+    ["Was denn?", 2],
+    [
+        "Ich hab ehrlich gesagt gar keine Lust, das schöne Essen alleine zu essen. Haben Sie nicht Lust, mitzuessen?",
+        1
+    ], ["Na da sag ich nicht nein. Sehr gerne!", 2],
+    [
+        "Dann bis später – sagen wir um 8? Ich schreib Ihnen meine Adresse auf.",
+        1
+    ], ["Super. Bis dann!", 2], ["Tschüss!", 1]
+])
+
+sg_05 = Convo("Die Familie", [
+    ["Hallo.", 1], ["Hallo!", 2],
+    ["Ich hab letzte Woche Deine Schwester getroffen. Sie sah gut aus!", 1],
+    [
+        "Ja, sie hat mir davon erzählt. Sie hat Dich erst gar nicht erkannt, weil Du jetzt kurze Haare hast.",
+        2
+    ],
+    [
+        "Wirklich? Das habe ich gar nicht gemerkt. Also, dass sie mich nicht erkannt hat. Dass meine Haare kurz sind, habe ich schon gemerkt.",
+        1
+    ], ["Scherzkeks.", 2], ["Wie war Euer Weihnachten?", 1],
+    [
+        "Schön! Erst waren wir bei meinen Eltern zu Besuch, und am zweiten Weihnachtsfeiertag dann bei den Schwiegereltern. Mein Schwager war leider krank, er konnte nicht kommen.",
+        2
+    ],
+    [
+        "Aber sonst waren alle da. Sogar meine Nichte und mein Neffe – sie studieren im Ausland und sind extra nach Hause gekommen über die Feiertage.",
+        2
+    ], ["Und wie war’s bei Dir?", 2],
+    [
+        "Sehr entspannt eigentlich. Meine Cousine hat mit uns gefeiert, also die Tochter meiner Tante aus Hamburg. Sie versteht sich nicht mit ihrem neuen Stiefvater und ist lieber zu uns gekommen.",
+        1
+    ], ["Verständlich.", 2],
+    [
+        "Am ersten Weihnachtsfeiertag haben wir dann noch meine Großeltern besucht. Meine Oma und mein Opa wohnen in einem Altersheim, leider ziemlich weit weg von hier. Sonst würde ich sie öfter besuchen.",
+        1
+    ],
+    [
+        "Das ist wirklich schade. Bekommen sie denn insgesamt nur selten Besuch?",
+        2
+    ],
+    [
+        "Nein, zum Glück wohnt ja mein Onkel in der Nähe, und mein Cousin arbeitet auch im gleichen Ort.",
+        1
+    ],
+    [
+        "Na dann ist es ja gut. Du, ich muss jetzt weiter – wir sehen uns sicher bald mal wieder, oder?",
+        2
+    ], ["Ja. Schönen Tag noch!", 1], ["Tschüss!", 2]
+])
+
 # Convo list
-convo_list = [sg_01, sg_02]
+convo_list = [sg_01, sg_02, sg_03, sg_05]

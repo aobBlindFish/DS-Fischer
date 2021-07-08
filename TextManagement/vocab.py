@@ -563,10 +563,61 @@ vv_30 = Vocab(
     ],
 )
 
+confirmation_1 = Vocab(
+    [" Ja.", " ja."],
+    [
+        [" yes. ", " richtig. ", " korrekt. ", " sure. ", " ye. "],
+        None,
+        [" jup. "],
+        None,
+        None,
+        [" jap. "],
+        [" jup. "],
+        [" jap. ", " yes. "],
+        None,
+        None,
+        None,
+    ],
+)
+
+confirmation_2 = Vocab(
+    [" Nein ", " nein "],
+    [
+        [" ne "],
+        None,
+        [" nope "],
+        [" ne "],
+        [" nö ", " nene "],
+        [" ne "],
+        [" nope "],
+        None,
+        None,
+        None,
+        None,
+    ],
+)
+
+greeting_1 = Vocab(
+    ["Hallo.", "Hallo!"],
+    [
+        ["Hi.", "Guten Tag.", "Hey.", "Yo."],
+        None,
+        ["Hi.", "Hey."],
+        ["Hi.", "Hey."],
+        None,
+        ["Hi.", "Hey."],
+        ["Hi.", "Hey."],
+        None,
+        None,
+        ["Moinmoin!", "Moinmoin."],
+        None,
+    ],
+)
+
 # Complete List
 vocab_list = [
     lb_0, lb_1, lb_2, vv_01, vv_02, vv_03, vv_04, vv_05, vv_06, vv_07, vv_08,
     vv_09, vv_10, vv_11, vv_12, vv_13, vv_14, vv_15, vv_16, vv_17, vv_18,
     vv_19, vv_20, vv_21, vv_22, vv_23, vv_24, vv_25, vv_26, vv_27, vv_28,
-    vv_29, vv_30
+    vv_29, vv_30, confirmation_1, confirmation_2, greeting_1
 ]

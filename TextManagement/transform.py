@@ -28,7 +28,8 @@ def decapital(text, intensity=50):
     if type(text) != str:
         sys.exit("Error in decapital(): Text needs to be a String.")
     elif len(text) == 0:
-        sys.exit("Error in decapital(): Text needs to have content.")
+        return text
+        # sys.exit("Error in decapital(): Text needs to have content.")
 
     # intensity: int/float in range(0, 100)
     # basic case
@@ -57,7 +58,8 @@ def capital(text, intensity=50):
     if type(text) != str:
         sys.exit("Error in capital(): Text needs to be a String.")
     elif len(text) == 0:
-        sys.exit("Error in capital(): Text needs to have content.")
+        return text
+        # sys.exit("Error in capital(): Text needs to have content.")
 
     # intensity: int/float in range(0, 100)
     # basic case
@@ -93,7 +95,8 @@ def repetition(text, symbols, factor=1):
     if type(text) != str:
         sys.exit("Error in repetition(): Text needs to be a String.")
     elif len(text) == 0:
-        sys.exit("Error in repetition(): Text needs to have content.")
+        return text
+        # sys.exit("Error in repetition(): Text needs to have content.")
 
     # symbol: char []
     if type(symbols) != list:
@@ -249,6 +252,9 @@ def filler(text, filler_words, intensity=50, word_mode=True):
     if output[:1] == " ":
         output = StrP.str_trim(output, 1)
 
+    if output[-2:] == " .":
+        output = StrP.str_trim(output, -2)
+
     return output
 
 
@@ -321,4 +327,8 @@ def transform(text, user_id, intensity=50):
         text = repetition(text, ["."], 0.3 * intensity)
         text = repetition(text, [","], 0.8 * intensity)
 
+    # Clean Up
+    if text[-2:] == " .":
+        text = StrP.str_trim(text, -2)
+    
     return text

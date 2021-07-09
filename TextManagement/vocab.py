@@ -114,7 +114,7 @@ vv_02 = Vocab(
         None,
     ],
 )
-vv_03 = Vocab(
+vv_03_a = Vocab(
     [" das heißt ", " Das heißt "],
     [
         None,
@@ -130,12 +130,76 @@ vv_03 = Vocab(
         None,
     ],
 )
-vv_04 = Vocab(
+vv_03_b = Vocab(
+    [" das heißt?", " Das heißt?"],
+    [
+        None,
+        None,
+        [" d.h.?"],
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+    ],
+)
+vv_04_a = Vocab(
     [" dumm ", " Dumm "],
     [
         None,
         None,
         [" doof "],
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+    ],
+)
+vv_04_b = Vocab(
+    [" dumm.", " Dumm."],
+    [
+        None,
+        None,
+        [" doof."],
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+    ],
+)
+vv_04_c = Vocab(
+    [" dumm?", " Dumm?"],
+    [
+        None,
+        None,
+        [" doof?"],
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+    ],
+)
+vv_04_d = Vocab(
+    [" dumm!", " Dumm!"],
+    [
+        None,
+        None,
+        [" doof!"],
         None,
         None,
         None,
@@ -163,7 +227,7 @@ vv_05 = Vocab(
     ],
 )
 vv_06 = Vocab(
-    [" ein ", " eine ", " Ein ", " Eine "],
+    [" eine ", " Eine "],
     [
         None,
         None,
@@ -174,7 +238,7 @@ vv_06 = Vocab(
         None,
         [" ne "],
         None,
-        [" ne ", " nen "],
+        [" ne "],
         None,
     ],
 )
@@ -190,7 +254,7 @@ vv_07 = Vocab(
         None,
         None,
         None,
-        [" ne ", " nen "],
+        [" nen "],
         None,
     ],
 )
@@ -226,7 +290,7 @@ vv_09 = Vocab(
         None,
     ],
 )
-vv_10 = Vocab(
+vv_10_a = Vocab(
     [" gemein ", " unfreundlich ", " Gemein ", " Unfreundlich "],
     [
         [" dreist ", " mean ", " rude "],
@@ -242,7 +306,55 @@ vv_10 = Vocab(
         None,
     ],
 )
-vv_11 = Vocab(
+vv_10_b = Vocab(
+    [" gemein.", " unfreundlich.", " Gemein.", " Unfreundlich."],
+    [
+        [" dreist.", " mean.", " rude."],
+        None,
+        None,
+        [" doof.", " gemein."],
+        None,
+        None,
+        None,
+        [" doof."],
+        None,
+        None,
+        None,
+    ],
+)
+vv_10_c = Vocab(
+    [" gemein?", " unfreundlich?", " Gemein?", " Unfreundlich?"],
+    [
+        [" dreist?", " mean?", " rude?"],
+        None,
+        None,
+        [" doof?", " gemein?"],
+        None,
+        None,
+        None,
+        [" doof?"],
+        None,
+        None,
+        None,
+    ],
+)
+vv_10_d = Vocab(
+    [" gemein!", " unfreundlich!", " Gemein!", " Unfreundlich!"],
+    [
+        [" dreist!", " mean!", " rude!"],
+        None,
+        None,
+        [" doof!", " gemein!"],
+        None,
+        None,
+        None,
+        [" doof!"],
+        None,
+        None,
+        None,
+    ],
+)
+vv_11_a = Vocab(
     [" habe ", " haben "],
     [
         None,
@@ -253,6 +365,54 @@ vv_11 = Vocab(
         None,
         None,
         [" hab "],
+        None,
+        None,
+        None,
+    ],
+)
+vv_11_b = Vocab(
+    [" habe.", " haben."],
+    [
+        None,
+        None,
+        [" hab."],
+        None,
+        None,
+        None,
+        None,
+        [" hab."],
+        None,
+        None,
+        None,
+    ],
+)
+vv_11_c = Vocab(
+    [" habe?", " haben?"],
+    [
+        None,
+        None,
+        [" hab?"],
+        None,
+        None,
+        None,
+        None,
+        [" hab?"],
+        None,
+        None,
+        None,
+    ],
+)
+vv_11_d = Vocab(
+    [" habe!", " haben!"],
+    [
+        None,
+        None,
+        [" hab!"],
+        None,
+        None,
+        None,
+        None,
+        [" hab!"],
         None,
         None,
         None,
@@ -274,12 +434,28 @@ vv_12 = Vocab(
         None,
     ],
 )
-vv_13 = Vocab(
+vv_13_a = Vocab(
     [" ist denn "],
     [
         None,
         None,
         [" isn "],
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+    ],
+)
+vv_13_b = Vocab(
+    [" ist denn?"],
+    [
+        None,
+        None,
+        [" isn?"],
         None,
         None,
         None,
@@ -306,7 +482,7 @@ vv_14 = Vocab(
         None,
     ],
 )
-vv_15 = Vocab(
+vv_15_a = Vocab(
     [" jemand ", " Jemand "],
     [
         [" jmd ", " someone "],
@@ -317,6 +493,22 @@ vv_15 = Vocab(
         None,
         [" wer "],
         [" jmd "],
+        None,
+        None,
+        None,
+    ],
+)
+vv_15_b = Vocab(
+    [" jemand?", " Jemand?"],
+    [
+        [" jmd?", " someone?"],
+        None,
+        [" jmd?"],
+        None,
+        [" wer?"],
+        None,
+        [" wer?"],
+        [" jmd?"],
         None,
         None,
         None,
@@ -354,12 +546,60 @@ vv_17 = Vocab(
         None,
     ],
 )
-vv_18 = Vocab(
+vv_18_a = Vocab(
     [" langweilig ", " Langweilig "],
     [
         None,
         None,
         [" lw "],
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+    ],
+)
+vv_18_b = Vocab(
+    [" langweilig.", " Langweilig."],
+    [
+        None,
+        None,
+        [" lw."],
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+    ],
+)
+vv_18_c = Vocab(
+    [" langweilig?", " Langweilig?"],
+    [
+        None,
+        None,
+        [" lw?"],
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+    ],
+)
+vv_18_d = Vocab(
+    [" langweilig!", " Langweilig!"],
+    [
+        None,
+        None,
+        [" lw!"],
         None,
         None,
         None,
@@ -386,7 +626,7 @@ vv_19 = Vocab(
         None,
     ],
 )
-vv_20 = Vocab(
+vv_20_a = Vocab(
     [" Lust "],
     [
         None,
@@ -394,6 +634,54 @@ vv_20 = Vocab(
         None,
         None,
         [" Bock "],
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+    ],
+)
+vv_20_b = Vocab(
+    [" Lust."],
+    [
+        None,
+        None,
+        None,
+        None,
+        [" Bock."],
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+    ],
+)
+vv_20_c = Vocab(
+    [" Lust?"],
+    [
+        None,
+        None,
+        None,
+        None,
+        [" Bock?"],
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+    ],
+)
+vv_20_d = Vocab(
+    [" Lust!"],
+    [
+        None,
+        None,
+        None,
+        None,
+        [" Bock!"],
         None,
         None,
         None,
@@ -418,7 +706,7 @@ vv_21 = Vocab(
         None,
     ],
 )
-vv_22 = Vocab(
+vv_22_a = Vocab(
     [" mit drin ", " drin ", " Mit drin ", " Drin "],
     [
         None,
@@ -434,7 +722,55 @@ vv_22 = Vocab(
         None,
     ],
 )
-vv_23 = Vocab(
+vv_22_b = Vocab(
+    [" mit drin.", " drin.", " Mit drin.", " Drin."],
+    [
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        [" drinne."],
+        None,
+    ],
+)
+vv_22_c = Vocab(
+    [" mit drin?", " drin?", " Mit drin?", " Drin?"],
+    [
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        [" drinne?"],
+        None,
+    ],
+)
+vv_22_d = Vocab(
+    [" mit drin!", " drin!", " Mit drin!", " Drin!"],
+    [
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        [" drinne!"],
+        None,
+    ],
+)
+vv_23_a = Vocab(
     [" okay ", " Okay "],
     [
         None,
@@ -450,7 +786,55 @@ vv_23 = Vocab(
         None,
     ],
 )
-vv_24 = Vocab(
+vv_23_b = Vocab(
+    [" okay.", " Okay."],
+    [
+        None,
+        None,
+        [" ok.", " oke."],
+        None,
+        [" ok."],
+        [" ok."],
+        None,
+        [" ok."],
+        None,
+        None,
+        None,
+    ],
+)
+vv_23_c = Vocab(
+    [" okay?", " Okay?"],
+    [
+        None,
+        None,
+        [" ok?", " oke?"],
+        None,
+        [" ok?"],
+        [" ok?"],
+        None,
+        [" ok?"],
+        None,
+        None,
+        None,
+    ],
+)
+vv_23_d = Vocab(
+    [" okay!", " Okay!"],
+    [
+        None,
+        None,
+        [" ok!", " oke!"],
+        None,
+        [" ok!"],
+        [" ok!"],
+        None,
+        [" ok!"],
+        None,
+        None,
+        None,
+    ],
+)
+vv_24_a = Vocab(
     [" sowieso ", " Sowieso "],
     [
         None,
@@ -466,7 +850,23 @@ vv_24 = Vocab(
         None,
     ],
 )
-vv_25 = Vocab(
+vv_24_b = Vocab(
+    [" sowieso.", " Sowieso."],
+    [
+        None,
+        None,
+        None,
+        None,
+        [" eh."],
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+    ],
+)
+vv_25_a = Vocab(
     [" super ", " Super "],
     [
         None,
@@ -482,7 +882,39 @@ vv_25 = Vocab(
         None,
     ],
 )
-vv_26 = Vocab(
+vv_25_b = Vocab(
+    [" super.", " Super."],
+    [
+        None,
+        None,
+        None,
+        [" supi."],
+        [" schick."],
+        None,
+        [" supi."],
+        None,
+        None,
+        None,
+        None,
+    ],
+)
+vv_25_c = Vocab(
+    [" super!", " Super!"],
+    [
+        None,
+        None,
+        None,
+        [" supi!"],
+        [" schick!"],
+        None,
+        [" supi!"],
+        None,
+        None,
+        None,
+        None,
+    ],
+)
+vv_26_a = Vocab(
     [" toll ", " cool ", " Toll ", " Cool "],
     [
         None,
@@ -493,6 +925,54 @@ vv_26 = Vocab(
         None,
         None,
         [" Coll "],
+        None,
+        None,
+        None,
+    ],
+)
+vv_26_b = Vocab(
+    [" toll.", " cool.", " Toll.", " Cool."],
+    [
+        None,
+        None,
+        None,
+        [" Coll."],
+        [" Coll."],
+        None,
+        None,
+        [" Coll."],
+        None,
+        None,
+        None,
+    ],
+)
+vv_26_c = Vocab(
+    [" toll?", " cool?", " Toll?", " Cool?"],
+    [
+        None,
+        None,
+        None,
+        [" Coll?"],
+        [" Coll?"],
+        None,
+        None,
+        [" Coll?"],
+        None,
+        None,
+        None,
+    ],
+)
+vv_26_d = Vocab(
+    [" toll!", " cool!", " Toll!", " Cool!"],
+    [
+        None,
+        None,
+        None,
+        [" Coll!"],
+        [" Coll!"],
+        None,
+        None,
+        [" Coll!"],
         None,
         None,
         None,
@@ -514,7 +994,7 @@ vv_27 = Vocab(
         None,
     ],
 )
-vv_28 = Vocab(
+vv_28_a = Vocab(
     [" ups "],
     [
         [" whoops ", " oops "],
@@ -527,6 +1007,38 @@ vv_28 = Vocab(
         None,
         None,
         [" upsi "],
+        None,
+    ],
+)
+vv_28_b = Vocab(
+    [" ups."],
+    [
+        [" whoops.", " oops."],
+        None,
+        [" Whoops."],
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        [" upsi."],
+        None,
+    ],
+)
+vv_28_c = Vocab(
+    [" ups!"],
+    [
+        [" whoops!", " oops!"],
+        None,
+        [" Whoops!"],
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        [" upsi!"],
         None,
     ],
 )
@@ -563,7 +1075,7 @@ vv_30 = Vocab(
     ],
 )
 
-confirmation_1 = Vocab(
+confirmation_1a = Vocab(
     [" Ja.", " ja."],
     [
         [" yes. ", " richtig. ", " korrekt. ", " sure. ", " ye. "],
@@ -579,8 +1091,24 @@ confirmation_1 = Vocab(
         None,
     ],
 )
+confirmation_1b = Vocab(
+    [" Ja!", " ja!"],
+    [
+        [" yes!", " richtig!", " sure!", " ye!"],
+        None,
+        [" jup!"],
+        None,
+        None,
+        [" jap!"],
+        [" jup!"],
+        [" jap!", " yes!"],
+        None,
+        None,
+        None,
+    ],
+)
 
-confirmation_2 = Vocab(
+confirmation_2a = Vocab(
     [" Nein ", " nein "],
     [
         [" ne "],
@@ -590,6 +1118,54 @@ confirmation_2 = Vocab(
         [" nö ", " nene "],
         [" ne "],
         [" nope "],
+        None,
+        None,
+        None,
+        None,
+    ],
+)
+confirmation_2b = Vocab(
+    [" Nein.", " nein."],
+    [
+        [" ne."],
+        None,
+        [" nope."],
+        [" ne."],
+        [" nö.", " nene."],
+        [" ne."],
+        [" nope."],
+        None,
+        None,
+        None,
+        None,
+    ],
+)
+confirmation_2c = Vocab(
+    [" Nein?", " nein?"],
+    [
+        [" ne?"],
+        None,
+        [" nope?"],
+        [" ne?"],
+        [" nö?", " nene?"],
+        [" ne?"],
+        [" nope?"],
+        None,
+        None,
+        None,
+        None,
+    ],
+)
+confirmation_2d = Vocab(
+    [" Nein!", " nein!"],
+    [
+        [" ne!"],
+        None,
+        [" nope!"],
+        [" ne!"],
+        [" nö!", " nene!"],
+        [" ne!"],
+        [" nope!"],
         None,
         None,
         None,
@@ -616,8 +1192,8 @@ greeting_1 = Vocab(
 
 # Complete List
 vocab_list = [
-    lb_0, lb_1, lb_2, vv_01, vv_02, vv_03, vv_04, vv_05, vv_06, vv_07, vv_08,
-    vv_09, vv_10, vv_11, vv_12, vv_13, vv_14, vv_15, vv_16, vv_17, vv_18,
-    vv_19, vv_20, vv_21, vv_22, vv_23, vv_24, vv_25, vv_26, vv_27, vv_28,
-    vv_29, vv_30, confirmation_1, confirmation_2, greeting_1
+    lb_0, lb_1, lb_2, vv_01, vv_02, vv_03_a, vv_03_b, vv_04_a, vv_04_b, vv_04_c, vv_04_d, vv_05, vv_06, vv_07, vv_08,
+    vv_09, vv_10_a, vv_10_b, vv_10_c, vv_10_d, vv_11_a, vv_11_b, vv_11_c, vv_11_d, vv_12, vv_13_a, vv_13_b, vv_14, vv_15_a, vv_15_b, vv_16, vv_17, vv_18_a, vv_18_b, vv_18_c, vv_18_d,
+    vv_19, vv_20_a, vv_20_b, vv_20_c, vv_20_d, vv_21, vv_22_a, vv_22_b, vv_22_c, vv_22_d, vv_23_a, vv_23_b, vv_23_c, vv_23_d, vv_24_a, vv_24_b, vv_25_a, vv_25_b, vv_25_c, vv_26_a, vv_26_b, vv_26_c, vv_26_d, vv_27, vv_28_a, vv_28_b, vv_28_c,
+    vv_29, vv_30, confirmation_1a, confirmation_1b, confirmation_2a, confirmation_2b, confirmation_2c, confirmation_2d, greeting_1
 ]

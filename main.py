@@ -100,7 +100,7 @@ async def on_message(message):
         names = StrP.str_trim(names, -2)
 
         # Send Intro
-        introduction = "Gespräch: " + title + "\nPersonen: " + names
+        introduction = "Konversation: " + title + "\nPersonen: " + names
         await message.channel.send(introduction)
 
         # Send Conversation

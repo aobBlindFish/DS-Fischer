@@ -230,5 +230,268 @@ sg_05 = Convo("Die Familie", [
     ], ["Ja. Schönen Tag noch!", 1], ["Tschüss!", 2]
 ])
 
+sg_06 = Convo("Das Konzert", [
+    ["Was für ein Sauwetter!", 1],
+    ["Das kann man wohl sagen. Es regnet seit Stunden.", 2],
+    [
+        "Wenn es wenigstens nur ein leichter Nieselregen wäre. Aber es schüttet ja regelrecht!",
+        1
+    ],
+    [
+        "Ich habe leider meinen Schirm verloren, ich bin richtig nass geworden als ich vorhin kurz beim Einkaufen war.",
+        2
+    ],
+    [
+        "Wenn es ein paar Grad kälter wäre, würde es schneien. Das wäre gleich viel schöner.",
+        1
+    ],
+    [
+        "Stimmt. Aber dann wären auch die Straßen gleich wieder glatt – das kann ich gar nicht brauchen. Ich fahre heute Abend noch zu einem Konzert.",
+        2
+    ], ["Ein Konzert?", 1],
+    ["Ja, meine Lieblingsband spielt in der Columbiahalle.", 2],
+    [
+        "Die Columbiahalle mag ich gar nicht. Viel schöner sind doch Konzerte im Olympiastadion. Oder gleich auf der Waldbühne!",
+        1
+    ],
+    [
+        "Aber das geht doch nur im Sommer, wenn es schön warm ist und die Sonne erst spät untergeht. Jetzt im Winter würde ich erfrieren bei einem Open Air!",
+        2
+    ],
+    [
+        "Stimmt ja. Wobei ich mal bei einem Open Air war mitten im Sommer, und da war es so neblig, dass man die Bühne fast nicht gesehen hat.",
+        1
+    ], ["Wirklich?", 2],
+    [
+        "Ja! Und als der Nebel sich verzogen hatte, zog ein Gewitter auf. So richtig heftig mit starkem Wind, Blitz und Donner. Und Platzregen. Seitdem habe ich keine Konzertkarten mehr gekauft.",
+        1
+    ], ["Pessimist! Und was machst Du heute Abend?", 2],
+    ["Ich gehe erstmal in die Badewanne. Meine Zehen sind ganz kalt.", 1],
+    [
+        "Dann mal viel Spaß. Ich erzähl Dir nächstes Mal, wie das Konzert war!",
+        2
+    ]
+])
+
+sg_07 = Convo("Beim Sport", [
+    ["Hallo, Dich habe ich ja schon lange nicht mehr gesehen!", 1],
+    ["Stimmt, ich Dich auch nicht. Was machst Du hier?", 2],
+    ["Das siehst Du ja, ich jogge.", 1],
+    ["Seit wann joggst Du denn? Ich dachte, Du magst keinen Sport?", 2],
+    [
+        "Mag ich auch nicht. Aber mein Arzt hat gesagt, ich soll mehr Sport machen.",
+        1
+    ], ["Da hat er natürlich recht. Und, macht es Dir Spaß?", 2],
+    [
+        "Nein, Spaß kann ich nicht behaupten. Aber es ist schon ok. Ich merke, dass es mir gut tut. Und Du, was machst Du so?",
+        1
+    ],
+    [
+        "Ich finde Sport toll. Ich gehe regelmäßig Laufen. Ich habe mich letztes Jahr sogar für einen Halbmarathon angemeldet und es hat gut geklappt!",
+        2
+    ], ["Wow. Gratuliere.", 1],
+    [
+        "Danke. Das war echt eine Überwindung. Ich musste mich überwinden, immer weiter zu laufen. Aber danach war ich wirklich glücklich.",
+        2
+    ], ["Ich bin glücklich, wenn ich zwei Runden um den See schaffe.", 1],
+    [
+        "Vielleicht ist ja Laufen nichts für Dich. Es gibt ja noch andere Sportarten. Ich gehe jeden Mittwoch zum Schwimmen und zwei Mal pro Woche ins Fitnessstudio.",
+        2
+    ], ["Wo nimmst Du nur die Zeit dafür her?", 1],
+    ["Ach, das geht schon. Dafür sehe ich so gut wie nie fern.", 2],
+    [
+        "Also ich versuche eher, mich im Alltag zu bewegen. Ich nehme die Treppe statt den Aufzug und ich fahre mit dem Fahrrad in die Arbeit statt mit dem Auto.",
+        1
+    ],
+    [
+        "Das sollte jeder so machen, wie er möchte. Ich freu mich jedenfalls, wenn wir uns hin und wieder hier beim Joggen sehen. Bis bald!",
+        2
+    ], ["Bis bald.", 1]
+])
+
+sg_08 = Convo("Haustiere", [
+    ["Hey, schön Dich zu sehen. Sag mal, wie geht es Deinem Hund?", 1],
+    ["Danke dass Du fragst. Schon viel besser.", 2],
+    ["Was hatte er denn genau?", 1],
+    ["Er hatte sich am Rücken verletzt und musste genäht werden.", 2],
+    ["Oh, das klingt gar nicht gut.", 1],
+    [
+        "Es war zum Glück halb so schlimm. Die Wunde ist schnell verheilt. Er musste halt eine zeitlang einen Trichter um den Hals tragen, damit er sich die Fäden nicht selber zieht. Das hat ihn genervt.",
+        2
+    ], ["Das kann ich mir vorstellen. Sieht man eine Narbe?", 1],
+    [
+        "Ja, noch sieht man die Narbe leider sehr gut. Aber wenn das Fell wieder nachgewachsen ist fällt es sicher nicht mehr auf.",
+        2
+    ], ["Das war bei meiner Katze damals auch so.", 1],
+    ["Ach stimmt ja, Du hast eine Katze.", 2],
+    [
+        "Ja, sie ist schon sehr alt. Fast 20 Jahre alt. Aber sie ist zum Glück sehr gesund. Nur ein bißchen schwerhörig.",
+        1
+    ],
+    ["Mit 20 Jahren darf man ruhig schwerhörig sein. Als Katze zumindest.", 2],
+    [
+        "Finde ich auch. Der Tierarzt war jedenfalls ganz erstaunt, dass sie so fit ist.",
+        1
+    ], ["Ist sie denn ein Freigänger?", 2],
+    [
+        "Ja. Früher hat sie nur in der Wohnung gelebt, weil ich in der Stadt im dritten Stock lebte.",
+        1
+    ],
+    [
+        "Aber seit ein paar Jahren darf sie auch nach draußen. Ich bin froh, dass Katzen so selbständig sind!",
+        1
+    ], ["Warum?", 2], ["Ich hätte keine Lust, andauernd Gassi zu gehen.", 1],
+    [
+        "Da gewöhnt man sich daran. Ich glaube auch, dass ich deswegen so selten erkältet bin, weil ich bei Wind und Wetter raus gehe.",
+        2
+    ],
+    [
+        "Das kann gut sein. Dann wünsche ich Dir viel Spaß draußen, während ich drinnen gemütlich mit einer Tasse Tee sitze, die Katze auf dem Schoß und ein Buch in der Hand.",
+        1
+    ], ["Du bist gemein.", 2], ["War nicht so gemeint. Bis bald!", 1],
+    ["Bis bald!", 2]
+])
+
+sg_09 = Convo("Eltern und Kind", [
+    ["Na, wie war es heute in der Schule?", 1], ["Schön!", 2],
+    ["Geht es etwas genauer? Was habt Ihr gemacht?", 1], ["Keine Ahnung.", 2],
+    ["Immer muss ich Dir alles aus der Nase ziehen!", 1],
+    [
+        "In Kunst haben wir einen Wald gemalt. Und in Sport haben wir Fußball gespielt.",
+        2
+    ], [
+        "Das klingt gut. Hast Du in der Pause mit Deinen Freunden gespielt?", 1
+    ], ["Ja, wir haben Fangen gespielt.", 2], ["Wer hat gewonnen?", 1],
+    ["Ich habe gewonnen!", 2], ["War sonst noch irgendwas?", 1],
+    ["Ja. Heute hat sich Finnja in der Pause verletzt.", 2],
+    ["Oh je! Was ist ihr passiert?", 1],
+    [
+        "Sie ist von der Schaukel gefallen und hat sich das Knie aufgeschlagen.",
+        2
+    ], ["Hat es geblutet?", 1],
+    ["Ja, es hat geblutet. Die Lehrerin hat ihr ein Pflaster gegeben.", 2],
+    ["Dann ist ja gut.", 1], ["Bald gibt es Zeugnisse.", 2],
+    ["Stimmt. Ich bin gespannt, welche Noten Du bekommst.", 1],
+    ["Ist das wichtig?", 2],
+    [
+        "Noten sind wichtig, damit man weiß, wie gut oder schlecht man in einem Fach ist. Also was man noch besser machen kann oder wo man noch mehr üben muss.",
+        1
+    ], ["Aber weißt Du, was das beste am Zeugnis ist?", 2], ["Was denn?", 1],
+    ["Dass danach die Ferien anfangen!", 2], ["Da hast Du recht!", 1]
+])
+
+sg_10 = Convo("Jobsuche", [
+    ["Sag mal, ich wollte dich mal was fragen.", 1], ["Was denn?", 2],
+    [
+        "Ich bin gerade auf der Suche nach einer neuen Arbeitsstelle. Und ich dachte mir, vielleicht weißt du was?",
+        1
+    ], ["Oh. Nein, leider nicht. Was ist denn mit deiner alten Stelle?", 2],
+    ["Da wurden leider einige Mitarbeiter entlassen.", 1],
+    ["Entlassen? Wieso denn?", 2],
+    [
+        "Weil das Geschäft nicht gut läuft. Also hat man die Mitarbeiter, die noch nicht so lange im Betrieb waren, entlassen.",
+        1
+    ], ["Geht das einfach so?", 2],
+    [
+        "Nein, ganz so war es auch nicht. Ich habe eine gute Abfindung bekommen.",
+        1
+    ], ["Was ist eine Abfindung?", 2],
+    [
+        "ine Abfindung ist Geld, damit ich nicht von heute auf morgen ohne Einkommen dastehe.",
+        1
+    ], ["Aha, verstehe. In welchem Bereich suchst du denn?", 2],
+    [
+        "Ich würde gerne weiter im Bereich Marketing arbeiten. In den letzten Jahren habe ich mich vor allem auf Social Media Marketing spezialisiert.",
+        1
+    ], ["Und möchtest du Vollzeit arbeiten?", 2],
+    [
+        "Nein, Vollzeit kann ich leider nicht arbeiten, weil ich drei Kinder habe. Aber Teilzeit wäre super. Dann kann ich vormittags arbeiten und mich nachmittags um die Familie kümmern.",
+        1
+    ], ["Hast du sonst noch Einschränkungen?", 2],
+    [
+        "Ich habe leider kein Auto, daher wäre es gut, wenn ich mit den öffentlichen Verkehrsmitteln in die Arbeit fahren könnte. Ansonsten ist eigentlich alles flexibel. Das Geld ist mir nicht so wichtig.",
+        1
+    ],
+    [
+        "Ich hoffe natürlich auf nette Kollegen, aber das zeigt sich ja erst später, wenn man dort arbeitet.",
+        1
+    ],
+    [
+        "Ich habe da eine Idee. Ein Bekannter von mir arbeitet in einer recht großen Firma, und er hat erst vor kurzem gesagt, dass sie zu wenig im Bereich Facebook und so machen.",
+        2
+    ],
+    [
+        "Oh, das wäre super! Könntest du ihn mal fragen, ob ich mich vorstellen kann?",
+        1
+    ],
+    [
+        "Das mache ich! Schick mir doch mal deine Initiativbewerbung per Mail, dann gebe ich sie weiter.",
+        2
+    ], ["Gerne. Ich danke dir tausend mal!", 1
+        ], ["Kein Problem. Bis bald!", 2], ["Bis bald!", 1]
+])
+
+sg_11 = Convo("Mein Kind ist krank", [
+    ["Hast du heute Zeit für einen Spaziergang?", 1],
+    ["Leider nicht. Mein Sohn ist krank.", 2], ["Oh je. Was hat er denn?", 1],
+    [
+        "Er ist heute morgen mit Fieber aufgewacht. Er hat ein wenig Schnupfen und Husten. Und vorhin hat er gesagt, dass er Kopfschmerzen hat.",
+        2
+    ], ["Das klingt nach einer Grippe.", 1],
+    [
+        "Ja, oder eine Erkältung. Er muss jetzt viel trinken. Ich habe ihn in der Schule entschuldigt.",
+        2
+    ], ["Gehst du mit ihm zum Arzt?", 1],
+    [
+        "Ich weiß es noch nicht. Wenn es ihm morgen nicht besser geht, werde ich mit ihm zum Kinderarzt gehen.",
+        2
+    ],
+    [
+        "Würde ich auch so machen. Du kannst ihm gegen die Kopfschmerzen ein Schmerzmittel geben.",
+        1
+    ],
+    [
+        "Das werde ich tun. Ich habe einen Saft, der gegen Fieber und Schmerzen hilft.",
+        2
+    ], ["Ich hasse das Gefühl, ein krankes Kind zu haben.", 1],
+    [
+        "Ja, ich wäre auch lieber selber krank. Aber man kann es nicht ändern.",
+        2
+    ],
+    [
+        "Jetzt im Winter sind einfach viele Viren unterwegs. In der Schule haben die Kinder viel Kontakt zueinander. Da stecken sie sich dann halt auch an.",
+        2
+    ],
+    [
+        "Aber als Kind war ich eigentlich ganz gerne krank, erinnere ich mich.",
+        1
+    ],
+    [
+        "Kein Wunder! Mein Sohn darf den ganzen Tag fernsehen, ich bringe ihm Essen und Getränke und die Katze hat auch bei ihm geschlafen. Das ist doch perfekt, um gesund zu werden.",
+        2
+    ], ["Stimmt! Na dann wünsche ich deinem Sohn gute Besserung.", 1],
+    ["Danke. Ich werde es ihm ausrichten.", 2],
+    ["Hoffentlich steckst du dich nicht an! Bleib gesund!", 1],
+    ["Ich gebe mir Mühe. Ich war erst vor zwei Wochen krank.", 2],
+    ["Wirklich? Das habe ich gar nicht mitbekommen!", 1],
+    [
+        "Doch, da konnte ich zwei Tage nicht in die Arbeit gehen. Zum Glück war ich am dritten Tag wieder fit, sonst hätte ich ein Attest vom Arzt gebraucht.",
+        2
+    ],
+    [
+        "Ich bin auch froh, wenn ich nicht zum Arzt muss. Im Wartezimmer zu sitzen mit lauter anderen kranken Menschen ist nicht so toll.",
+        1
+    ],
+    [
+        "Stimmt, aber manchmal geht es eben nicht anders. Vor allem wenn man ein Rezept braucht für Medikamente.",
+        2
+    ],
+    [
+        "Also dann – ich melde mich übermorgen nochmal bei dir. Vielleicht hast du dann Zeit für einen Spaziergang.",
+        1
+    ], ["Gerne. Bis dann!", 2], ["Bis dann!", 1]
+])
+
+
 # Convo list
-convo_list = [sg_01, sg_02, sg_03, sg_05]
+convo_list = [sg_01, sg_02, sg_03, sg_05, sg_06, sg_07, sg_08, sg_09, sg_10, sg_11]

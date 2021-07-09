@@ -1,6 +1,7 @@
 import TextManagement.transform as trend
 import TextManagement.vocab as vocab
 import TextManagement.convo as convo
+import TextManagement.StringPreset as StrP
 import random
 
 IDs = [
@@ -26,6 +27,10 @@ def transition(text, user_id, intensity=100):
     for i in vocab.vocab_list:
         text = vocab.transform_vocab(text, i, user_id, intensity)
     text = trend.transform(text, user_id)
+
+    # Clean Up
+    if text[-2:] == " .":
+        text = StrP.str_trim(text, -2)
     return text
 
 
@@ -50,7 +55,7 @@ def conversation(intensity=50):
     # Translate Conversation
     final_talk = []
     for line in assigned_talk:
-        final_talk.append(IDs[line[1]] + ": " +
+        final_talk.append("**" + IDs[line[1]] + "**: " +
                           transition(line[0], line[1], intensity))
 
     return [talk.title, user_ids, final_talk]

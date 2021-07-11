@@ -8,8 +8,8 @@ import TextManagement.StringPreset as StrP
 client = discord.Client()
 
 IDs = [
-    "Adrian", "Gill", "Dilara", "Elli", "Ian", "Jamila", "Jila",
-    "Lara", "Lisa", "Marvin", "Emilia"
+    "Adrian", "Gill", "Dilara", "Elli", "Ian", "Jamila", "Jila", "Lara",
+    "Lisa", "Marvin", "Emilia"
 ]
 
 
@@ -26,6 +26,8 @@ async def on_message(message):
         return
 
     if message.content.startswith("!i "):
+        await message.channel.trigger_typing()
+        time.sleep(2)
         # get content
         msg_split = message.content.split("||")
 
@@ -42,13 +44,17 @@ async def on_message(message):
         response_1 = IDs[int(user_id)] + " 10%:\n" + translation_1
         response_2 = IDs[int(user_id)] + " 50%:\n" + translation_2
         response_3 = IDs[int(user_id)] + " 90%:\n" + translation_3
-        await message.channel.send(response_1)
+        await message.channel.send(response_1, reference=message)
+        await message.channel.trigger_typing()
         time.sleep(5)
-        await message.channel.send(response_2)
+        await message.channel.send(response_2, reference=message)
+        await message.channel.trigger_typing()
         time.sleep(5)
-        await message.channel.send(response_3)
+        await message.channel.send(response_3, reference=message)
 
     elif message.content.startswith("!u "):
+        await message.channel.trigger_typing()
+        time.sleep(2)
         # get content
         msg_split = message.content.split("||")
 
@@ -63,10 +69,13 @@ async def on_message(message):
             translation = io_manager.transition(text, user_id, intensity)
             response = IDs[int(user_id)] + " " + str(
                 intensity) + "%:\n" + translation
-            await message.channel.send(response)
+            await message.channel.send(response, reference=message)
+            await message.channel.trigger_typing()
             time.sleep(5)
 
     elif message.content.startswith("!s "):
+        await message.channel.trigger_typing()
+        time.sleep(2)
         # get content
         msg_split = message.content.split("||")
 
@@ -83,7 +92,7 @@ async def on_message(message):
         translation = io_manager.transition(text, user_id, intensity)
         response = IDs[int(user_id)] + " " + str(
             intensity) + "%:\n" + translation
-        await message.channel.send(response)
+        await message.channel.send(response, reference=message)
 
     elif message.content.startswith("!c "):
         # get intensity
@@ -105,11 +114,13 @@ async def on_message(message):
 
         # Send Conversation
         for line in lines:
+            await message.channel.trigger_typing()
             time.sleep(5)
             await message.channel.send(line)
-        
+
         # Stop Conversation
-        time.sleep(3)
+        await message.channel.trigger_typing()
+        time.sleep(2)
         await message.channel.send("Ende")
 
 

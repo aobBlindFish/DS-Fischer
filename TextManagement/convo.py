@@ -33,9 +33,8 @@ class Convo:
 
         for change in self.additions:
             output.append(change[0])
-        
-        return output
 
+        return output
 
 
 # Convos
@@ -70,7 +69,10 @@ sg_01 = Convo("Im Café", [
         "Glaube ich nicht. Das ist ein ganz unbekannter japanischer Schriftsteller.",
         2
     ], ["Und wie bist Du auf das Buch gekommen?", 1],
-    ["Das hat mir Kollegin auf der Arbeit empfohlen.", 2, ],
+    [
+        "Das hat mir Kollegin auf der Arbeit empfohlen.",
+        2,
+    ],
     [
         "Praktisch, wenn man so jemanden bei der Arbeit hat. Wie ist es bei Dir gerade dort?",
         1
@@ -210,6 +212,79 @@ sg_03 = Convo("Im Supermarkt", [
         1
     ], ["Super. Bis dann!", 2], ["Tschüss!", 1]
 ], [])
+
+sg_04 = Convo("Ein Treffen alter Freunde", [
+    ["Hallo Name! Lange nicht gesehen! Wie geht es Dir denn?", 1],
+    [
+        "Hallo Annik, mir geht es gut, danke! Es ist wirklich toll, dich wieder zu sehen.",
+        2
+    ], ["Wie geht’s Dir? Und was machst Du?", 2],
+    [
+        "Ach, ich bin zufrieden. Wie lange haben wir uns nicht gesehen? 15 Jahre? Stell Dir vor, ich arbeite immer noch in der gleichen Firma wie damals.",
+        1
+    ], ["Und Du? Lebst Du hier in Berlin?", 1],
+    [
+        "Du hast recht: Es ist mindestens 15 Jahre her, seit wir uns das letzte Mal gesehen haben. Ich bin gerade zu Besuch in Berlin, ich mache hier eine Weiterbildung.",
+        2
+    ],
+    [
+        "ch weiß nicht, ob Du Dich daran erinnerst, dass ich ja für BASF arbeite. Die Firma hat mich nach Amerika versetzt, also bin ich umgezogen. Ich lebe jetzt in einer kleinen Stadt in Tennessee.",
+        2
+    ],
+    [
+        "Wir müssen unbedingt Essen gehen, während ich in Berlin bin. Hast du Zeit? Ich zahle!",
+        2
+    ],
+    [
+        "Da sage ich nicht nein! Ich erinnere mich noch dass Du damals schwer verliebt warst in eine blonde Studentin. Habt Ihr noch Kontakt?",
+        1
+    ],
+    [
+        "Ja, wir waren drei Jahren zusammen. Sie fehlt mir immer noch sehr. Aber sie hat mich nicht geliebt. Sie wollte reisen und keine Kinder haben. Also ist sie Flugbegleiterin geworden, stell Dir vor! Ich glaube, sie ist es immer noch. Aber mir hat das schon das Herz gebrochen, als wir uns getrennt haben. Es hat mich einige Jahre gekostet, über den Liebeskummer weg zu kommen.",
+        2
+    ], ["Jetzt ist das alles vorbei. Ist ja schon lange her. Und Du?", 2],
+    [
+        "Ich habe mittlerweile drei Kinder, zwei Mädchen und einen Jungen. Sie gehen alle schon in die Schule. Ich bin aber allein erziehend, ich habe mich vom Vater der Kinder getrennt. Aber wir sind noch befreundet und er kümmert sich um die Kleinen.",
+        1
+    ],
+    [
+        "Lebst Du gerne in den USA? Gibt es etwas, das Du vermisst oder das in Deutschland besser war?",
+        1
+    ],
+    [
+        "Ja, Das Leben in Amerika ist gut. Meistens sind die Leute nett und das Wetter ist dort, wo ich wohne, milder als in Deutschland. Da, wo ich wohne, herrscht sehr gutes Wetter – es gibt einen zu heißen Monat, einen zu kalten Monat aber die anderen Monate haben alle angenehme Temperaturen. Das Gebirge ist wunderschön, aber Schnee gibt’s im Winter nur selten. Da ist’s in den Alpen schon zuverlässiger.",
+        2
+    ],
+    [
+        "Mein größtes Problem ist die Sprache: Der Dialekt in der Gegend ist echt sehr schwer zu verstehen. Man nennt das „Hillbilly-Southern English“.",
+        2
+    ],
+    [
+        "Das Schlimmste ist aber: Keinerlei Nachtleben. Oder keine Kneipen, in denen man nach der Arbeit ein gutes Bier trinken kann. Klar, es gibt in Tennessee schon Bars, aber die Atmosphäre ist nicht die Gleiche wie hier in einer Kneipe.",
+        2
+    ],
+    [
+        "Na ja. Aber mal eine persönliche Frage: Wie lange bist Du denn schon getrennt? Wie sind deine Kinder mit der Trennung umgegangen? Erzählst du mir mehr über deine Kinder?",
+        2
+    ],
+    [
+        "Wir haben uns vor vielen Jahren getrennt, als die Kinder noch klein waren. Sie kennen es also nicht anders – und da wir Freunde geblieben sind, ist es kein großes Problem. Aber es ist natürlich anstrengend.",
+        1
+    ],
+    [
+        "Meine jüngste Tochter ist 6 Jahre alt, sie wurde gerade eingeschult. Mein Sohn ist 9, er ist ein typischer Junge, liebt Dinosaurier und Piraten. Und meine älteste Tochter ist schon 14, sie ist also ein Teenager! Unglaublich, oder?",
+        1
+    ], ["Lebst du allein oder hast Du wieder eine Partnerin?", 1],
+    [
+        "Ich habe leider keine Kinder – obwohl ich gerne welche hätte. Vielleicht eines Tages. Aber momentan habe ich ja nicht einmal eine Partnerin. Ich würde aber schon gerne heiraten und Kinder haben, ich bin da echt altmodisch. Im Moment verbringe ich viel Zeit mit meinen Eltern, ihnen geht es gesundheitlich nicht gut.",
+        2
+    ],
+    [
+        "Oh, das tut mir leid! Aber ich merke schon, wir haben uns viel zu erzählen. Komm, lass uns gleich etwas essen gehen und in Ruhe weiterreden!",
+        1
+    ], ["Gerne.", 2],
+    ["Super. Dann komm mit, da hinten ist mein Lieblingsrestaurant!", 1]
+], [[1, 2, 2, "!"], [2, 2, 1, ","]])
 
 sg_05 = Convo("Die Familie", [
     ["Hallo Name.", 1], ["Hallo Name!", 2],
@@ -391,8 +466,10 @@ sg_09 = Convo("Eltern und Kind", [
         "Sie ist von der Schaukel gefallen und hat sich das Knie aufgeschlagen.",
         2
     ], ["Hat es geblutet?", 1],
-    ["Ja, es hat geblutet. Sie hat dann ein Pflaster von der Lehrerin bekommen.", 2],
-    ["Dann ist ja gut.", 1], ["Bald gibt es Zeugnisse.", 2],
+    [
+        "Ja, es hat geblutet. Sie hat dann ein Pflaster von der Lehrerin bekommen.",
+        2
+    ], ["Dann ist ja gut.", 1], ["Bald gibt es Zeugnisse.", 2],
     ["Stimmt. Ich bin gespannt, welche Noten Du bekommst.", 1],
     ["Ist das wichtig?", 2],
     [
@@ -400,7 +477,8 @@ sg_09 = Convo("Eltern und Kind", [
         1
     ], ["Aber weißt Du, was das beste am Zeugnis ist?", 2], ["Was denn?", 1],
     ["Dass danach die Ferien anfangen!", 2], ["Da hast Du recht!", 1]
-], [[10, 1, 3, ""], [12, 5, 4, ""], [13, 6, 4, ""], [14, 1, 4, ""], [16, 5, 4, ""]])
+], [[10, 1, 3, ""], [12, 5, 4, ""], [13, 6, 4, ""], [14, 1, 4, ""],
+    [16, 5, 4, ""]])
 
 sg_10 = Convo("Jobsuche", [
     ["Sag mal, ich wollte dich mal was fragen.", 1], ["Was denn?", 2],
@@ -514,7 +592,5 @@ sg_11 = Convo("Mein Kind ist krank", [
     ], ["Gerne. Bis dann!", 2], ["Bis dann!", 1]
 ], [])
 
-
 # Convo list
-# convo_list = [sg_01, sg_02, sg_03, sg_05, sg_06, sg_07, sg_08, sg_09, sg_10, sg_11]
-convo_list = [sg_10]
+convo_list = [sg_01, sg_02, sg_03, sg_04, sg_05, sg_06, sg_07, sg_08, sg_09, sg_10, sg_11]

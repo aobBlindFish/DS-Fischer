@@ -161,6 +161,7 @@ def typo(text, intensity):
         "+",
         "#",
     ]
+    digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
     try:
         text = str(text)
         intensity = float(intensity)
@@ -179,13 +180,17 @@ def typo(text, intensity):
         if rng(intensity):
             new_word = ""
             for letter in word:
-                if rng(intensity * 0.3) and letter not in sentence_chars:
+                if rng(
+                        intensity * 0.3
+                ) and letter not in sentence_chars and letter not in digits:
                     # capitalize
                     if rng(50):
                         letter = letter.upper()
                     else:
                         letter = letter.lower()
-                if rng(95) or letter in sentence_chars:  # omission
+                if rng(
+                        95
+                ) or letter in sentence_chars or letter in digits:  # omission
                     new_word = new_word + letter
             output = output + new_word + " "
         else:
@@ -330,5 +335,5 @@ def transform(text, user_id, intensity=50):
     # Clean Up
     if text[-2:] == " .":
         text = StrP.str_trim(text, -2)
-    
+
     return text

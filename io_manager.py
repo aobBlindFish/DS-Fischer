@@ -5,8 +5,8 @@ import TextManagement.StringPreset as StrP
 import random
 
 IDs = [
-    "Blind Fish", "Trainerd", "Dilara", "Elli", "Ian", "Jamila", "Jila",
-    "Lara", "Lisa", "Logikerus", "Emilia"
+    "Adrian", "Gill", "Dilara", "Elli", "Ian", "Jamila", "Jila", "Lara",
+    "Lisa", "Marvin", "Emilia"
 ]
 
 
@@ -40,22 +40,45 @@ def conversation(intensity=50):
 
     # Generate User IDs
     count = talk.amount
+    max_amount = count[1]
     user_ids = []
-    while count > 0:
+    while max_amount > 0:
         rnd = random.randint(0, 10)
         if rnd not in user_ids:
             user_ids.append(rnd)
-            count -= 1
+            max_amount -= 1
 
     # Assign User IDs to the Conversation
     assigned_talk = []
     for line in talk.lines:
         assigned_talk.append([line[0], user_ids[line[1] - 1]])
 
+    # Exchange Words in lines
+    exchanged_talk = []
+    for line in assigned_talk:
+        for change in talk.additions:
+            if line in assigned_talk and assigned_talk.index(
+                    line) + 1 == change[0]:
+                name = IDs[user_ids[change[2] - 1]]
+                word = name + change[3]
+                line = [StrP.exchange(line[0], word, [change[1]]), line[1]]
+
+        exchanged_talk.append(line)
+
     # Translate Conversation
     final_talk = []
-    for line in assigned_talk:
+    for line in exchanged_talk:
         final_talk.append("**" + IDs[line[1]] + "**: " +
                           transition(line[0], line[1], intensity))
+
+    # Remove extra user_ids
+    temp = user_ids
+    user_ids = []
+    main_amount = count[0]
+    k = 0
+    while main_amount != 0:
+        user_ids.append(temp[k])
+        main_amount -= 1
+        k += 1
 
     return [talk.title, user_ids, final_talk]

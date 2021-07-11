@@ -626,7 +626,7 @@ vv_19 = Vocab(
         None,
     ],
 )
-vv_20_a = Vocab(
+vv_20_aa = Vocab(
     [" Lust "],
     [
         None,
@@ -642,7 +642,7 @@ vv_20_a = Vocab(
         None,
     ],
 )
-vv_20_b = Vocab(
+vv_20_ba = Vocab(
     [" Lust."],
     [
         None,
@@ -658,7 +658,7 @@ vv_20_b = Vocab(
         None,
     ],
 )
-vv_20_c = Vocab(
+vv_20_ca = Vocab(
     [" Lust?"],
     [
         None,
@@ -674,7 +674,7 @@ vv_20_c = Vocab(
         None,
     ],
 )
-vv_20_d = Vocab(
+vv_20_da = Vocab(
     [" Lust!"],
     [
         None,
@@ -682,6 +682,70 @@ vv_20_d = Vocab(
         None,
         None,
         [" Bock!"],
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+    ],
+)
+vv_20_ab = Vocab(
+    ["keine Lust "],
+    [
+        None,
+        None,
+        None,
+        None,
+        ["keinen Bock "],
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+    ],
+)
+vv_20_bb = Vocab(
+    ["keine Lust."],
+    [
+        None,
+        None,
+        None,
+        None,
+        ["keinen Bock."],
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+    ],
+)
+vv_20_cb = Vocab(
+    ["keine Lust?"],
+    [
+        None,
+        None,
+        None,
+        None,
+        ["keinen Bock?"],
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+    ],
+)
+vv_20_db = Vocab(
+    ["keine Lust!"],
+    [
+        None,
+        None,
+        None,
+        None,
+        ["keinen Bock!"],
         None,
         None,
         None,
@@ -1194,6 +1258,6 @@ greeting_1 = Vocab(
 vocab_list = [
     lb_0, lb_1, lb_2, vv_01, vv_02, vv_03_a, vv_03_b, vv_04_a, vv_04_b, vv_04_c, vv_04_d, vv_05, vv_06, vv_07, vv_08,
     vv_09, vv_10_a, vv_10_b, vv_10_c, vv_10_d, vv_11_a, vv_11_b, vv_11_c, vv_11_d, vv_12, vv_13_a, vv_13_b, vv_14, vv_15_a, vv_15_b, vv_16, vv_17, vv_18_a, vv_18_b, vv_18_c, vv_18_d,
-    vv_19, vv_20_a, vv_20_b, vv_20_c, vv_20_d, vv_21, vv_22_a, vv_22_b, vv_22_c, vv_22_d, vv_23_a, vv_23_b, vv_23_c, vv_23_d, vv_24_a, vv_24_b, vv_25_a, vv_25_b, vv_25_c, vv_26_a, vv_26_b, vv_26_c, vv_26_d, vv_27, vv_28_a, vv_28_b, vv_28_c,
+    vv_19, vv_20_aa, vv_20_ba, vv_20_ca, vv_20_da, vv_20_ab, vv_20_bb, vv_20_cb, vv_20_db, vv_21, vv_22_a, vv_22_b, vv_22_c, vv_22_d, vv_23_a, vv_23_b, vv_23_c, vv_23_d, vv_24_a, vv_24_b, vv_25_a, vv_25_b, vv_25_c, vv_26_a, vv_26_b, vv_26_c, vv_26_d, vv_27, vv_28_a, vv_28_b, vv_28_c,
     vv_29, vv_30, confirmation_1a, confirmation_1b, confirmation_2a, confirmation_2b, confirmation_2c, confirmation_2d, greeting_1
 ]

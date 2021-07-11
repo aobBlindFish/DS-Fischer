@@ -12,3 +12,22 @@ def str_trim(text, index_str):
     else:
         output = text
     return output
+
+def exchange(text, word, position):
+    def exchange_main(text, word, position):
+        str_split = text.split(" ")
+        output = ""
+        counter = 0
+        for i in str_split:
+            counter += 1
+            if counter == position:
+                i = word
+
+            output = output + i + " "
+
+        return str_trim(output, -1)
+
+    for j in position:
+        text = exchange_main(text, word, j)
+
+    return text

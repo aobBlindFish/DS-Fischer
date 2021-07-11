@@ -8,8 +8,8 @@ import TextManagement.StringPreset as StrP
 client = discord.Client()
 
 IDs = [
-    "Blind Fish", "Trainerd", "Dilara", "Elli", "Ian", "Jamila", "Jila",
-    "Lara", "Lisa", "Logikerus", "Emilia"
+    "Adrian", "Gill", "Dilara", "Elli", "Ian", "Jamila", "Jila",
+    "Lara", "Lisa", "Marvin", "Emilia"
 ]
 
 

@@ -1,19 +1,41 @@
 # Class Definition
 class Convo:
-    def __init__(self, title, lines):
+    def __init__(self, title, lines, additions):
         # title: str
         # lines: str,int [][]
+        # additions: str,int [][]
+        # additions: [[line, position, ID, add_ons]]
         self.title = title
         self.lines = lines
+        self.additions = additions
+        self.affected = self.check_affected()
         self.amount = self.count()
 
+    # Counts amount of users talking/mentioned
     def count(self):
         count = 0
         for line in self.lines:
             if line[1] > count:
                 count = line[1]
 
-        return count
+        extra = 0
+        for change in self.additions:
+            if change[2] > extra:
+                extra = change[2]
+
+        return count, extra
+
+    # Counts amount of lines to be changed
+    def check_affected(self):
+        output = []
+        if len(self.additions) == 0:
+            return output
+
+        for change in self.additions:
+            output.append(change[0])
+        
+        return output
+
 
 
 # Convos
@@ -21,7 +43,7 @@ class Convo:
 sg: slowgerman.com
 '''
 sg_01 = Convo("Im Café", [
-    ["Hallo!", 1], ["Hallo!", 2], ["Wie geht es dir?", 1],
+    ["Hallo Name!", 1], ["Hallo Name!", 2], ["Wie geht es dir?", 1],
     [
         "Ach, ganz gut. Ich habe Halsschmerzen. Hoffentlich werde ich nicht krank.",
         2
@@ -48,9 +70,9 @@ sg_01 = Convo("Im Café", [
         "Glaube ich nicht. Das ist ein ganz unbekannter japanischer Schriftsteller.",
         2
     ], ["Und wie bist Du auf das Buch gekommen?", 1],
-    ["Das hat mir eine Kollegin empfohlen.", 2],
+    ["Das hat mir Kollegin auf der Arbeit empfohlen.", 2, ],
     [
-        "Praktisch, wenn man solche Kolleginnen hat. Wie ist es bei Dir gerade in der Arbeit?",
+        "Praktisch, wenn man so jemanden bei der Arbeit hat. Wie ist es bei Dir gerade dort?",
         1
     ],
     [
@@ -85,7 +107,7 @@ sg_01 = Convo("Im Café", [
         1
     ], ["Klingt gut. Wir können uns ja nächstes Mal dort treffen.", 2],
     ["Warum nicht?", 1]
-])
+], [[1, 2, 2, "!"], [2, 2, 1, "!"], [20, 4, 4, ""]])
 
 sg_02 = Convo("Das Wetter", [
     ["Das ist ja mal wieder typisches Aprilwetter!", 1],
@@ -138,7 +160,7 @@ sg_02 = Convo("Das Wetter", [
         "Das klingt doch gut. Dann spar Dir die paar Euro für den Regenschirm lieber und wir essen von dem Geld ein Eis, wenn es wärmer wird.",
         2
     ], ["Abgemacht! Jetzt aber los.", 1]
-])
+], [])
 
 sg_03 = Convo("Im Supermarkt", [
     ["Entschuldigung, wo sind denn hier die Tomaten?", 1],
@@ -187,10 +209,10 @@ sg_03 = Convo("Im Supermarkt", [
         "Dann bis später – sagen wir um 8? Ich schreib Ihnen meine Adresse auf.",
         1
     ], ["Super. Bis dann!", 2], ["Tschüss!", 1]
-])
+], [])
 
 sg_05 = Convo("Die Familie", [
-    ["Hallo.", 1], ["Hallo!", 2],
+    ["Hallo Name.", 1], ["Hallo Name!", 2],
     ["Ich hab letzte Woche Deine Schwester getroffen. Sie sah gut aus!", 1],
     [
         "Ja, sie hat mir davon erzählt. Sie hat Dich erst gar nicht erkannt, weil Du jetzt kurze Haare hast.",
@@ -228,7 +250,7 @@ sg_05 = Convo("Die Familie", [
         "Na dann ist es ja gut. Du, ich muss jetzt weiter – wir sehen uns sicher bald mal wieder, oder?",
         2
     ], ["Ja. Schönen Tag noch!", 1], ["Tschüss!", 2]
-])
+], [[1, 2, 2, "."], [2, 2, 1, "!"]])
 
 sg_06 = Convo("Das Konzert", [
     ["Was für ein Sauwetter!", 1],
@@ -249,7 +271,7 @@ sg_06 = Convo("Das Konzert", [
         "Stimmt. Aber dann wären auch die Straßen gleich wieder glatt – das kann ich gar nicht brauchen. Ich fahre heute Abend noch zu einem Konzert.",
         2
     ], ["Ein Konzert?", 1],
-    ["Ja, meine Lieblingsband spielt in der Columbiahalle.", 2],
+    ["Ja, die Band von Name spielt in der Columbiahalle.", 2],
     [
         "Die Columbiahalle mag ich gar nicht. Viel schöner sind doch Konzerte im Olympiastadion. Oder gleich auf der Waldbühne!",
         1
@@ -271,7 +293,7 @@ sg_06 = Convo("Das Konzert", [
         "Dann mal viel Spaß. Ich erzähl Dir nächstes Mal, wie das Konzert war!",
         2
     ]
-])
+], [[8, 5, 3, ""]])
 
 sg_07 = Convo("Beim Sport", [
     ["Hallo, Dich habe ich ja schon lange nicht mehr gesehen!", 1],
@@ -298,7 +320,7 @@ sg_07 = Convo("Beim Sport", [
         "Vielleicht ist ja Laufen nichts für Dich. Es gibt ja noch andere Sportarten. Ich gehe jeden Mittwoch zum Schwimmen und zwei Mal pro Woche ins Fitnessstudio.",
         2
     ], ["Wo nimmst Du nur die Zeit dafür her?", 1],
-    ["Ach, das geht schon. Dafür sehe ich so gut wie nie fern.", 2],
+    ["Ach, das geht schon. Dafür bin ich so gut wie nie auf Netflix.", 2],
     [
         "Also ich versuche eher, mich im Alltag zu bewegen. Ich nehme die Treppe statt den Aufzug und ich fahre mit dem Fahrrad in die Arbeit statt mit dem Auto.",
         1
@@ -307,7 +329,7 @@ sg_07 = Convo("Beim Sport", [
         "Das sollte jeder so machen, wie er möchte. Ich freu mich jedenfalls, wenn wir uns hin und wieder hier beim Joggen sehen. Bis bald!",
         2
     ], ["Bis bald.", 1]
-])
+], [[1, 1, 2, ","]])
 
 sg_08 = Convo("Haustiere", [
     ["Hey, schön Dich zu sehen. Sag mal, wie geht es Deinem Hund?", 1],
@@ -350,7 +372,7 @@ sg_08 = Convo("Haustiere", [
         1
     ], ["Du bist gemein.", 2], ["War nicht so gemeint. Bis bald!", 1],
     ["Bis bald!", 2]
-])
+], [])
 
 sg_09 = Convo("Eltern und Kind", [
     ["Na, wie war es heute in der Schule?", 1], ["Schön!", 2],
@@ -362,14 +384,14 @@ sg_09 = Convo("Eltern und Kind", [
     ], [
         "Das klingt gut. Hast Du in der Pause mit Deinen Freunden gespielt?", 1
     ], ["Ja, wir haben Fangen gespielt.", 2], ["Wer hat gewonnen?", 1],
-    ["Ich habe gewonnen!", 2], ["War sonst noch irgendwas?", 1],
+    ["Jacob und Ich haben gewonnen!", 2], ["War sonst noch irgendwas?", 1],
     ["Ja. Heute hat sich Finnja in der Pause verletzt.", 2],
-    ["Oh je! Was ist ihr passiert?", 1],
+    ["Oh je! Was ist mit ihr passiert?", 1],
     [
         "Sie ist von der Schaukel gefallen und hat sich das Knie aufgeschlagen.",
         2
     ], ["Hat es geblutet?", 1],
-    ["Ja, es hat geblutet. Die Lehrerin hat ihr ein Pflaster gegeben.", 2],
+    ["Ja, es hat geblutet. Sie hat dann ein Pflaster von der Lehrerin bekommen.", 2],
     ["Dann ist ja gut.", 1], ["Bald gibt es Zeugnisse.", 2],
     ["Stimmt. Ich bin gespannt, welche Noten Du bekommst.", 1],
     ["Ist das wichtig?", 2],
@@ -378,7 +400,7 @@ sg_09 = Convo("Eltern und Kind", [
         1
     ], ["Aber weißt Du, was das beste am Zeugnis ist?", 2], ["Was denn?", 1],
     ["Dass danach die Ferien anfangen!", 2], ["Da hast Du recht!", 1]
-])
+], [[10, 1, 3, ""], [12, 5, 4, ""], [13, 6, 4, ""], [14, 1, 4, ""], [16, 5, 4, ""]])
 
 sg_10 = Convo("Jobsuche", [
     ["Sag mal, ich wollte dich mal was fragen.", 1], ["Was denn?", 2],
@@ -397,7 +419,7 @@ sg_10 = Convo("Jobsuche", [
         1
     ], ["Was ist eine Abfindung?", 2],
     [
-        "ine Abfindung ist Geld, damit ich nicht von heute auf morgen ohne Einkommen dastehe.",
+        "Eine Abfindung ist Geld, damit ich nicht von heute auf morgen ohne Einkommen dastehe.",
         1
     ], ["Aha, verstehe. In welchem Bereich suchst du denn?", 2],
     [
@@ -417,7 +439,7 @@ sg_10 = Convo("Jobsuche", [
         1
     ],
     [
-        "Ich habe da eine Idee. Ein Bekannter von mir arbeitet in einer recht großen Firma, und er hat erst vor kurzem gesagt, dass sie zu wenig im Bereich Facebook und so machen.",
+        "Ich habe da eine Idee. Ein Bekannter von mir, Falk, arbeitet in einer recht großen Firma, und die haben erst vor kurzem gesagt, dass sie zu wenig im Bereich Facebook und so machen.",
         2
     ],
     [
@@ -429,7 +451,7 @@ sg_10 = Convo("Jobsuche", [
         2
     ], ["Gerne. Ich danke dir tausend mal!", 1
         ], ["Kein Problem. Bis bald!", 2], ["Bis bald!", 1]
-])
+], [[19, 10, 3, ","], [20, 7, 3, ""]])
 
 sg_11 = Convo("Mein Kind ist krank", [
     ["Hast du heute Zeit für einen Spaziergang?", 1],
@@ -490,8 +512,9 @@ sg_11 = Convo("Mein Kind ist krank", [
         "Also dann – ich melde mich übermorgen nochmal bei dir. Vielleicht hast du dann Zeit für einen Spaziergang.",
         1
     ], ["Gerne. Bis dann!", 2], ["Bis dann!", 1]
-])
+], [])
 
 
 # Convo list
-convo_list = [sg_01, sg_02, sg_03, sg_05, sg_06, sg_07, sg_08, sg_09, sg_10, sg_11]
+# convo_list = [sg_01, sg_02, sg_03, sg_05, sg_06, sg_07, sg_08, sg_09, sg_10, sg_11]
+convo_list = [sg_10]

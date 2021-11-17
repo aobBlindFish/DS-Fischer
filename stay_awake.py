@@ -1,3 +1,4 @@
+# Österreich
 from flask import Flask
 from threading import Thread
 
@@ -6,7 +7,7 @@ app = Flask("")
 
 @app.route("/")
 def home():
-    return "Hello. I am awake."
+    return "Hello. I am awake :)"
 
 
 def run():
